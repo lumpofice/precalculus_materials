@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% Standard math packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+% Packages for images
+\usepackage{tikz}
+
+% Package for the layout
+\usepackage{geometry}
+
+% Title Page
+\title{PreCalculus}
+\author{Jonathan Parker}
+\date{Last Updated on \today}
+
+% Counters
+\renewcommand*\contentsname{Table of Contents}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem{note}{Note}[section]
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   \noindent \textbf{Example~\theexample. #1} \rmfamily}{\medskip}
+
+\newcounter{exercise}[section]
+\newenvironment{exercise}[1][]{\refstepcounter{exercise}\par\medskip
+   \noindent \textbf{Exercise~\theexercise. #1} \rmfamily}{\medskip}
+   
+\newcounter{recall}[section]
+\newenvironment{recall}[1][]{\refstepcounter{recall}\par\medskip
+   \noindent \textbf{Recall~\therecall. #1} \rmfamily}{\medskip}
+   
+% Removing indentations
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\input{domain_of_functions/domain_of_functions}
+
+\end{document}
