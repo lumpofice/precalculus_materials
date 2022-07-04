@@ -1,3 +1,34 @@
 \section{Domain of Functions}
 
 This section deals mainly with polynomial, rational, and radical functions, as they provide the example best for obtaining an intuition for the concept of domain.
+
+\begin{example}
+We have an example of the identity function, in the attenuated domain:
+\begin{align*}
+    f(x) = x \hspace{20pt} x \in [-2, 2]
+\end{align*}
+in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. The collection of these $x$ values is known as the domain of $f$. Think about it as if the function $f$ is pulling $x$ from the red line to the vertical position at which $f$ wishes to settle. 
+
+\vspace{0.5in}
+\resizebox{30em}{30em}{%
+\begin{tikzpicture}[scale=\textwidth/5.2cm]
+    % title and axes
+    \node at (-1, 1.1) {$f(x) = x \hspace{20pt} x \in [-2, 2]$};
+    \draw (-2, 0) -- (2, 0)
+        node[right] {$x$};
+    \draw (0, -2) -- (0, 2)
+        node[above] {$f(x)$};
+    % graph
+    \draw[blue, very thick] plot[smooth] file {domain_of_functions/identity_neg2_2.table};
+    \draw[red, very thick] plot[smooth] file {domain_of_functions/domain_identity_neg2_2.table};
+    \draw[dotted, ->] (2, 0) -- (2, 1.95);
+    \draw[dotted, ->] (1.5, 0) -- (1.5, 1.45);
+    \draw[dotted, ->] (1, 0) -- (1, 0.95);
+    \draw[dotted, ->] (0.5, 0) -- (0.5, 0.45);
+    \draw[dotted, ->] (-0.5, 0) -- (-0.5, -0.45);
+    \draw[dotted, ->] (-1, 0) -- (-1, -0.95);
+    \draw[dotted, ->] (-1.5, 0) -- (-1.5, -1.45);
+    \draw[dotted, ->] (-2, 0) -- (-2, -1.95);
+\end{tikzpicture}
+}
+\end{example}
