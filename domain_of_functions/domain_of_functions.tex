@@ -7,7 +7,7 @@ We have an example of the identity function, in the attenuated domain:
 \begin{align*}
     f(x) = x \hspace{20pt} x \in [-2, 2]
 \end{align*}
-in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. The collection of these $x$ values is known as the domain of $f$. Think about it as if the function $f$ is pulling $x$ from the red line to the vertical position at which $f$ wishes to settle. 
+in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. The collection of these $x$ values is known as the domain of $f$, which we denote as Dom($f$). Meaning, in this example, $\text{Dom($f$)} = [-2, 2]$. Think about it as if the function $f$ is pulling $x$ from the red line to the vertical position at which $f$ wishes to settle at the horizontal coordinate $x$. 
 
 \vspace{0.5in}
 \resizebox{30em}{30em}{%
@@ -38,7 +38,7 @@ We look at the same function, but instead of the entirety of our attenuated doma
 \begin{align*}
     f(x) = x \hspace{20pt} x \in [-2, 0] \cup \Big[\dfrac{1}{2}, 2\Big]
 \end{align*}
-in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. Because there are not $x$ values in both the domain of $f$ (Dom($f$)) and the interval $(0, 1/2)$, there is nothing there for $f$ to act on. Thus, the function $f$ (the blue line) contains no information along that interval $(0, 1/2)$.
+in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. Because there are not $x$ values in both Dom($f$) and the interval $(0, 1/2)$, there is nothing there for $f$ to act on. Thus, the function $f$ (the blue line) contains no information along that interval $(0, 1/2)$. Thus, we have $\text{Dom($f$)} = [-2, 0] \cup \Big[\dfrac{1}{2}, 2\Big]$.
 
 \vspace{0.5in}
 \resizebox{30em}{30em}{%
@@ -69,7 +69,42 @@ in which the blue line represents the function, and the red line represents the 
 \begin{recall}
 If the function $f$ is
 \begin{itemize}
-    \item rational, then any $x$ value that makes the denominator of $f$ equal to $0$ will not belong to Dom($f$).\\
-    \item even parity radical (think square root, fourth root, etc.), then any $x$ value that makes the radicand less than $0$ will not belong to Dom($f$).
+    \item rational, then any $x$ value that makes the denominator of $f$ equal to $0$ will not belong to Dom($f$). Any $x$ value that does not make the denominator of $f$ equal to $0$ is in Dom($f$).\\
+    \item even parity radical (think square root, fourth root, etc.), then any $x$ value that makes the radicand less than $0$ will not belong to Dom($f$). Any $x$ value that does not make the radicand of $f$ less than $0$ is in Dom($f$).
 \end{itemize}
 \end{recall}
+
+\begin{example}
+Here is an example of a rational function, which is defined at every point of the real line except for two points. One of the two points on which we focus in the example is $x=1/2$. We look at the function along an attenuated domain
+\begin{align*}
+    f(x) = \dfrac{x - (1/2)}{x^{2} - (1/4)} \hspace{20pt} x \in \Big[0, \dfrac{1}{2}\Big) \cup \Big(\dfrac{1}{2}, 1\Big]
+\end{align*}
+in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. Because having $0$ in the denominator is illegal, we see that there is no $x$ in both the Dom($f$) and equal to $1/2$. So, the function $f$ is not defined at this point. Thus, we have a hole in the graph where it is not defined and we have $\text{Dom($f$)}=\Big[0, \dfrac{1}{2}\Big) \cup \Big(\dfrac{1}{2}, 1\Big]$.
+
+\vspace{0.5in}
+\resizebox{30em}{30em}{%
+\begin{tikzpicture}[scale=\textwidth/5.0cm]
+    % title and axes
+    \node at (1.5, 1.3) {$f(x) = \dfrac{x-(1/2)}{x^{2}-(1/4)} \hspace{20pt} x \in \Big[0, \dfrac{1}{2}\Big) \cup \Big(\dfrac{1}{2}, 1]$};
+    \draw (0, 0) -- (1, 0)
+        node[right] {$x$};
+    \draw (0, 0) -- (0, 2)
+        node[above] {$f(x)$};
+    % graph
+    \draw[blue, very thick] plot[smooth] file {domain_of_functions/rational_0_1_piece_0.table};
+    \draw[blue, very thick] plot[smooth] file {domain_of_functions/rational_0_1_piece_1.table};
+    \draw[red, very thick] plot[smooth] file {domain_of_functions/domain_rational_0_1_piece_0.table};
+    \draw[red, very thick] plot[smooth] file {domain_of_functions/domain_rational_0_1_piece_1.table};
+    \draw[blue, fill=white] (0.5,1.0) circle (.25mm);
+    \draw[red, fill=white] (0.5,0) circle (.25mm);
+    \draw[dotted] (0.5, 0.1) -- (0.5, 0.9);
+\end{tikzpicture}
+}
+\end{example}
+
+\begin{exercise}
+Find which $x$ values make the denominator $0$ and state the domain of $f$.
+\begin{align*}
+    f(x) = \dfrac{x-(1/2)}{x^{2}-(1/4)}
+\end{align*}
+\end{exercise}
