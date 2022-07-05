@@ -1,6 +1,6 @@
 \section{Domain of Functions}
 
-This section deals mainly with polynomial, rational, and radical functions, as they provide the example best for obtaining an intuition for the concept of domain.
+This section deals mainly with polynomial, rational, and even parity radical functions, as they provide the example best for obtaining an intuition for the concept of domain.
 
 \begin{example}
 We have an example of the identity function, in the attenuated domain:
@@ -32,3 +32,44 @@ in which the blue line represents the function, and the red line represents the 
 \end{tikzpicture}
 }
 \end{example}
+
+\begin{example}
+We look at the same function, but instead of the entirety of our attenuated domain, we have pieced the attenuated domain into two sub-intervals:
+\begin{align*}
+    f(x) = x \hspace{20pt} x \in [-2, 0] \cup \Big[\dfrac{1}{2}, 2\Big]
+\end{align*}
+in which the blue line represents the function, and the red line represents the $x$ values on which $f$ is acting. Because there are not $x$ values in both the domain of $f$ (Dom($f$)) and the interval $(0, 1/2)$, there is nothing there for $f$ to act on. Thus, the function $f$ (the blue line) contains no information along that interval $(0, 1/2)$.
+
+\vspace{0.5in}
+\resizebox{30em}{30em}{%
+\begin{tikzpicture}[scale=\textwidth/5.2cm]
+    % title and axes
+    \node at (-1, 1.1) {$f(x) = x \hspace{20pt} x \in [-2, 0] \cup \Big[\dfrac{1}{2}, 2\Big]$};
+    \draw (-2, 0) -- (2, 0)
+        node[right] {$x$};
+    \draw (0, -2) -- (0, 2)
+        node[above] {$f(x)$};
+    % graph
+    \draw[blue, very thick] plot[smooth] file {domain_of_functions/identity_neg2_2_discontinuous_piece_0.table};
+    \draw[blue, very thick] plot[smooth] file {domain_of_functions/identity_neg2_2_discontinuous_piece_1.table};
+    \draw[red, very thick] plot[smooth] file {domain_of_functions/domain_identity_neg2_2_discontinuous_piece_0.table};
+    \draw[red, very thick] plot[smooth] file {domain_of_functions/domain_identity_neg2_2_discontinuous_piece_1.table};
+    \draw[dotted, ->] (2, 0) -- (2, 1.95);
+    \draw[dotted, ->] (1.5, 0) -- (1.5, 1.45);
+    \draw[dotted, ->] (1, 0) -- (1, 0.95);
+    \draw[dotted, ->] (0.5, 0) -- (0.5, 0.45);
+    \draw[dotted, ->] (-0.5, 0) -- (-0.5, -0.45);
+    \draw[dotted, ->] (-1, 0) -- (-1, -0.95);
+    \draw[dotted, ->] (-1.5, 0) -- (-1.5, -1.45);
+    \draw[dotted, ->] (-2, 0) -- (-2, -1.95);
+\end{tikzpicture}
+}
+\end{example}
+
+\begin{recall}
+If the function $f$ is
+\begin{itemize}
+    \item rational, then any $x$ value that makes the denominator of $f$ equal to $0$ will not belong to Dom($f$).\\
+    \item even parity radical (think square root, fourth root, etc.), then any $x$ value that makes the radicand less than $0$ will not belong to Dom($f$).
+\end{itemize}
+\end{recall}
